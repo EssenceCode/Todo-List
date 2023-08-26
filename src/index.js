@@ -1,38 +1,36 @@
-import CreateProject, { ProjectArrayCreate } from './project.js';
-import createTodo from './todo.js';
+import Project, { ProjectArrayCreate } from './project.js';
+import Todo from './todo.js';
 import View from './view.js'; 
 
-// const arr = []
-const projectArr = ProjectArrayCreate('projectArray')
-// function clearData(obj) {
-//     obj.filter(val => val !== val)
-// }
-
-const project1 = CreateProject('project1')
-const project2 = CreateProject('project2')
-const project3 = CreateProject('project2')
-const project4 = CreateProject('project3')
+const inputId = document.getElementById('projectId');
 
 
-const todo1 = createTodo('todo1')
-const todo2 = createTodo('todo2')
+const projectForm = document.getElementById('project-form');
+const projectBtn = document.querySelector('.project-button');
+const TodoForm = document.getElementById('todo-form');
+const todoBtn = document.querySelector('.todo-button');
 
+const projectArray = ProjectArrayCreate('projectArray')
 
-projectArr.addProject(project1)
-projectArr.addProject(project2)
+let currentId;
+projectBtn.addEventListener('click', (e) => {
+    const project = Project(projectForm.value);
+    currentId = project.Id
+    projectArray.addProject(project);
+    // inputId = project
+    View().CreateProjectButton(project, currentId)
+    console.log(projectArray.projectList)
+    // console.log(`CurrentID:${currentId}`)
+   
 
-projectArr.projectList[0].pushTodo(todo1)
-projectArr.projectList[0].pushTodo(todo2)
+});
 
-projectArr.projectList[1].pushTodo(todo2)
-
-
-// console.log(projectArr.projectList[0].todoList)
-// projectArr.removeProject(0)
-projectArr.projectList[0].removeTodo(0)
-
-console.log(projectArr.projectList)
-
+todoBtn.addEventListener('click', (e) => {
+    const todo = Todo(TodoForm.value);
+    projectArray.projectList[0].addTodo(todo)
+    View().CreateDropMenu(projectArray)
+//    console.log(projectArray.projectList) 
+})
 
 
 

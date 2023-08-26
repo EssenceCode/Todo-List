@@ -1,14 +1,15 @@
 
-export default function CreateProjects(title) { 
+export default function CreateProjects(title, id =  crypto.randomUUID()) { 
     const todoArray = [];
 
     const Title = title 
+    const Id = id
  
-    const todoList = todoArray
-  
+    const todoList = todoArray  
    
     return Object.assign(
         {},
+        { Id },
         { Title },
         { todoList },
         PushTodo(todoArray),
@@ -17,14 +18,18 @@ export default function CreateProjects(title) {
         )
 }
 
+
+
 export function ProjectArrayCreate(title) {
     const projectArray = []
+    let currentId;
     const projectList = projectArray
 
     return Object.assign(
         {},
         {title},
         { projectList },
+        { currentId },
         PushProject(projectArray),
         DeleteProject(projectArray)
     )
@@ -46,7 +51,7 @@ function DeleteProject(obj) {
 
 function PushTodo(obj) {
     return {
-        pushTodo: (arr) => obj.push(arr),
+        addTodo: (arr) => obj.push(arr),
         
     }
 }
