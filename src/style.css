@@ -1,0 +1,42 @@
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.project-container {
+    display: grid;
+    grid-template-rows: repeat(auto-fit,minmax(25px, 1fr));
+    grid-template-columns: 1fr;
+    grid-column: 1;
+    gap: 20px;
+}
+
+.sidebar {
+
+    grid-column: 1;
+    display: grid;
+    margin-top: 10px;
+    gap: 20px;
+
+}
+
+.form {
+    
+    display: none;
+}
+
+.form-update {
+    display: none;
+}
+
+.show-form {
+    grid-column: 2;
+    display: grid;
+}
+
+.todo-container {
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+}

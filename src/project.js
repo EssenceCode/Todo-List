@@ -1,7 +1,9 @@
-
+import PushProject from "./project/push-project";
+import PushTodo from "./project/push-todo";
+import DeleteProject from "./project/del-project";
+import DeleteTodo from "./project/del-todo";
 export default function CreateProjects(title, id =  crypto.randomUUID()) { 
     const todoArray = [];
-
     const Title = title 
     const Id = id
  
@@ -18,50 +20,20 @@ export default function CreateProjects(title, id =  crypto.randomUUID()) {
         )
 }
 
-
-
 export function ProjectArrayCreate(title) {
     const projectArray = []
-    let currentId;
-    const projectList = projectArray
+  
+    const Projects = projectArray
 
     return Object.assign(
         {},
         {title},
-        { projectList },
-        { currentId },
+        { Projects },
         PushProject(projectArray),
         DeleteProject(projectArray)
     )
     
 }
-
-
-function PushProject(obj) {
-    return {
-        addProject: (arr) => obj.push(arr)
-    }
-}
-
-function DeleteProject(obj) {
-    return {
-        removeProject: (index) => obj.splice(index, 1)
-    }
-}
-
-function PushTodo(obj) {
-    return {
-        addTodo: (arr) => obj.push(arr),
-        
-    }
-}
-
-function DeleteTodo(obj) {
-    return {
-        removeTodo: (index) => obj.splice(index, 1)
-    }
-}
-
 
 
 

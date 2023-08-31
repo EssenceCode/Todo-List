@@ -1,36 +1,24 @@
-import Project, { ProjectArrayCreate } from './project.js';
+import Projects from './project.js';
 import Todo from './todo.js';
 import View from './view.js'; 
+import './style.css'
 
-const inputId = document.getElementById('projectId');
+const todo = Todo('todo1')
 
+const project = Projects('project1')
 
-const projectForm = document.getElementById('project-form');
-const projectBtn = document.querySelector('.project-button');
-const TodoForm = document.getElementById('todo-form');
-const todoBtn = document.querySelector('.todo-button');
+project.addTodo(todo)
 
-const projectArray = ProjectArrayCreate('projectArray')
+// console.log(project.todoList[0].Title('changetodo'))
+// console.log(project.todoList[0])
 
-let currentId;
-projectBtn.addEventListener('click', (e) => {
-    const project = Project(projectForm.value);
-    currentId = project.Id
-    projectArray.addProject(project);
-    // inputId = project
-    View().CreateProjectButton(project, currentId)
-    console.log(projectArray.projectList)
-    // console.log(`CurrentID:${currentId}`)
-   
+View().ProjectForm()
+View().ProjectRender()
+View().ProjectEvent()
+View().ProjectTitleRender()
+View().ProjectDelete()
 
-});
+View().RenderTodo()
+View().TodoFormButton()
 
-todoBtn.addEventListener('click', (e) => {
-    const todo = Todo(TodoForm.value);
-    projectArray.projectList[0].addTodo(todo)
-    View().CreateDropMenu(projectArray)
-//    console.log(projectArray.projectList) 
-})
-
-
-
+View().EditTodo()
