@@ -18,7 +18,8 @@ View().ProjectEvent()
 View().ProjectTitleRender()
 View().ProjectDelete()
 
-View().RenderTodo()
+View().TodoRender()
 View().TodoFormButton()
 
 View().EditTodo()
+View().DelTodo()

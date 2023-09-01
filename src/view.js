@@ -9,8 +9,9 @@ export default function View() {
         ProjectEvent,
         ProjectDelete,
         TodoForm,
-        RenderTodo,
+        TodoRender,
         EditTodo,
+        DelTodo,
         TodoFormButton,
     }
 }
@@ -114,7 +115,7 @@ function ProjectEvent() {
         console.log(project)
         View().ProjectTitleRender()
         View().TodoFormButton()
-        View().RenderTodo()
+        View().TodoRender()
        
         
     }))
@@ -187,8 +188,10 @@ function TodoForm() {
    
     
         projectArray.Projects[getProjectId()].addTodo(todo)
-        View().RenderTodo() 
+        View().TodoRender() 
         View().EditTodo()
+        View().DelTodo()
+
         form.classList.toggle('show-form')
     })
 
@@ -231,10 +234,11 @@ function TodoForm() {
 }
 
 
-function RenderTodo() {
+function TodoRender() {
     const container = document.querySelector('.todo-container')
     container.textContent = ''
     for (let i = 0; i < projectArray.Projects[getProjectId()].todoList.length; i++) {
+        // setTodoId(i)
         const todo = document.createElement('div');
         todo.setAttribute('todo', i);
         
@@ -251,9 +255,13 @@ function RenderTodo() {
         note.textContent = `Note:${projectArray.Projects[getProjectId()].todoList[i].Note}`;
 
 
-        const button = document.createElement('button');
-        button.classList.add('edit-todo')
-        button.textContent = 'Edit';
+        const editBtn = document.createElement('button');
+        editBtn.classList.add('edit-todo');
+        editBtn.textContent = 'Edit';
+
+        const delBtn = document.createElement('button');
+        delBtn.classList.add('del-todo');
+        delBtn.textContent = 'Del'
  
         todo.appendChild(title)
         todo.appendChild(description)
@@ -261,7 +269,9 @@ function RenderTodo() {
         todo.appendChild(priority)
         todo.appendChild(note)
         
-        todo.appendChild(button)
+        todo.appendChild(editBtn)
+        todo.appendChild(delBtn)
+
 
         container.appendChild(todo)
      
@@ -296,8 +306,9 @@ function UpdateTodo() {
    
     
         console.log(projectArray.Projects[getProjectId()].todoList)
-        View().RenderTodo() 
+        View().TodoRender() 
         View().EditTodo()
+        View().DelTodo()
         form.classList.toggle('show-form')
     })
 
@@ -347,12 +358,32 @@ function EditTodo() {
         const parent = e.target.parentElement
         const id = parent.getAttribute('todo')
         setTodoId(id)
-        // console.log()
+        console.log(getTodoId() === Number(id))
         form.textContent = ''
         UpdateTodo()
         form.classList.toggle('show-form')
 
     }))
+}
+
+function DelTodo() {
+    const button = document.querySelectorAll('.del-todo');
+
+    button.forEach(btn => btn.addEventListener('click', (e) => {
+        const parent = e.target.parentElement;
+        const id = parent.getAttribute('todo');
+        setTodoId(id)
+
+        projectArray.Projects[getProjectId()].removeTodo(getTodoId())
+        parent.remove()
+        console.log(getTodoId())
+        console.log(id)
+     
+        console.log(projectArray.Projects[getProjectId()].todoList)
+        
+
+    }))
+
 }
 
 function TodoFormButton() {
