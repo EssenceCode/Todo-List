@@ -21,5 +21,4 @@ View().ProjectDelete()
 View().TodoRender()
 View().TodoFormButton()
 
-View().EditTodo()
-View().DelTodo()
+

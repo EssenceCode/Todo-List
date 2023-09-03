@@ -1,16 +1,16 @@
-export default function createTodo(title, description, dueDate, priority, note ) {
+export default function CreateTodo(title, description, dueDate, priority) {
     let Title = title;
     let Description = description;
     let DueDate = dueDate;
     let Priority = priority;
-    let Note = note;
+   
 
     const UpdateTodo = (title,description,dueDate,priority,note) => {
         Title = title;
         Description = description;
         DueDate = dueDate;
         Priority = priority;
-        Note = note;
+       
     }
 
     return {
@@ -18,7 +18,7 @@ export default function createTodo(title, description, dueDate, priority, note )
         Description,
         DueDate,
         Priority,
-        Note,
+      
         UpdateTodo
         
     }

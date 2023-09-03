@@ -1,14 +1,60 @@
+:root {
+    --project-width: 120px;
+    --project-height: 50px;
+    --project-border-width: 2px;
+    --button-hover-border-color: rgb(0, 128, 0);
+    --button-hover-background-color: rgb(0, 128, 0);
+    --button-hover-color: rgb(255,255,255);
+
+   
+
+    --todo-buttons-width: 50px;
+    --todo-buttons-height: 25px;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+input,
+textarea,
+select,
+button { --project-add-width: 100px;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
 .content {
+  
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
+.header-container {
+   padding: 25px;
+    background: green;
+    /* margin-bottom: 25px; */
+
+}
+
+.project-wrapper {
+    height: 100vh;
+    background-color: aliceblue;
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-column: 1;
+    grid-row: 1 / 4;
+    place-items: center;
+    /* gap: 20px; */
+}
+
 .project-container {
     display: grid;
-    grid-template-rows: repeat(auto-fit,minmax(25px, 1fr));
-    grid-template-columns: 1fr;
-    grid-column: 1;
-    gap: 20px;
+    /* grid-template-rows: repeat(auto-fit,minmax(25px, 1fr)); */
+    gap: 10px;
 }
 
 .sidebar {
@@ -20,6 +66,38 @@
 
 }
 
+.project {
+    width: var(--project-width);
+    height: var(--project-height);
+    border-radius: 5px;
+    border: 2px solid blue;
+    background: white;
+    color: black;  
+
+}
+
+.project:active {
+    border-width: var(--button-border-width);
+    border-color: var(--button-hover-border-color);
+    background: var(--button-hover-background-color);
+    color: var(--button-hover-color);
+}
+
+.project-add, .project-delete {
+    border-radius: 5px;
+    border: 2px solid blue;
+    background: white;
+    color: black;
+}
+
+.project-add:active, .project-delete:active {
+    border-width: var(--button-border-width);
+    border-color: var(--button-hover-border-color);
+    background: var(--button-hover-background-color);
+    color: var(--button-hover-color);
+}
+
+
 .form {
     
     display: none;
@@ -30,13 +108,112 @@
 }
 
 .show-form {
-    grid-column: 2;
     display: grid;
+    place-content: center;
+    
 }
 
 .todo-container {
     grid-column: 2;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); */
+    gap: 5px;
+}
+
+.todo-form {
+    display: grid;
+    place-content: center;
+    background: aliceblue;
+    height: 200px;
+    width: 250px;
+    gap: 2px;
+}
+
+.todo-card {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+}
+.todo-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.todo-date, .todo-buttons {
+    margin: 6px 5px;
+}
+
+.edit-todo, .del-todo {
+    width: var(--todo-buttons-width);
+    height: var(--todo-buttons-height);
+    border-radius: 5px;
+    border: 1px solid blue;
+    background: white;
+}
+
+.todo-buttons button:active {
+    border-width: var(--button-border-width);
+    border-color: var(--button-hover-border-color);
+    background: var(--button-hover-background-color);
+    color: var(--button-hover-color);
+}
+
+.add-todo {
+   
+    width: 150px;
+    height: 25px;
+    border-radius: 25px;
+    border: 0;
+}
+
+.add-todo:active {
+    border-width: var(--button-border-width);
+    border-color: var(--button-hover-border-color);
+    background: var(--button-hover-background-color);
+    color: var(--button-hover-color);
+}
+
+.add-todo > span {
+    position: absolute;
+}
+
+.add-todo > span::before {
+    position: relative;
+}
+
+.add-todo > span::before {
+    content: 'add todo';
+    top: -10px;
+    left: -30px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.low-priority {
+    border-left: 10px solid green;
+}
+.medium-priority {
+    border-left: 10px solid yellow;
+}
+.high-priority {
+    border-left: 10px solid red;
+}
+
+
+.submit-todo {
+    width: var(--todo-buttons-width);
+    height: var(--todo-buttons-height);
+    border-radius: 5px;
+    border: 1px solid blue;
+    background: white;
+
+    justify-self: center;
+}
+
+.submit-todo:active {
+    border-width: var(--button-border-width);
+    border-color: var(--button-hover-border-color);
+    background: var(--button-hover-background-color);
+    color: var(--button-hover-color);
 }
