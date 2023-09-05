@@ -1,5 +1,5 @@
 import { setTodoId } from "./get-set-todo-id";
-import { projectArray } from "../view";
+import { projectManager } from "../view";
 import { getProjectId } from "./get-set-project-id"
 import { getTodoId } from "./get-set-todo-id";
 
@@ -14,13 +14,13 @@ export default function DelTodo() {
         const parent = e.target.parentElement;
         const id = parent.getAttribute('todo');
         setTodoId(id)
-        projectArray.Projects[getProjectId()].removeTodo(getTodoId())
+        projectManager.Projects[getProjectId()].removeTodo(getTodoId())
         parent.remove()
         
         console.log(getTodoId())
         console.log(id)
         
-        console.log(projectArray.Projects[getProjectId()].todoList)
+        console.log(projectManager.Projects[getProjectId()].todoList)
         
         TodoRender() 
         EditTodo()

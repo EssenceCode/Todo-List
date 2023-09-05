@@ -76,6 +76,7 @@ export default function TodoForm() {
     button.addEventListener('click', (e) => {
         e.preventDefault()
         TodoSubmit()
+        formContainer.classList.toggle('show-form')
        
         
     })

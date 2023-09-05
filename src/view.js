@@ -25,16 +25,15 @@ export default function View() {
     }
 }
 
-export const projectArray = ProjectArrayCreate('projectArray');
+export const projectManager = ProjectArrayCreate('ProjectManager');
 
-const allProjectArr = ProjectArrayCreate('allProjectArray')
+
 
 const defaultProject = Project('default')
-const allProject = Project('ALL PROJECTS')
 
-projectArray.addProject(defaultProject)
-allProjectArr.addProject(projectArray)
-console.log(allProjectArr)
+
+projectManager.addProject(defaultProject)
+
 
 
 

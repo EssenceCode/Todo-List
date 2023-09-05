@@ -1,4 +1,4 @@
-import ProjectFormButton from "./project-form-button";
+import ProjectSubmit from "./project-form-button";
 
 export default function ProjectForm() {
     const container = document.querySelector('.sidebar');
@@ -9,7 +9,7 @@ export default function ProjectForm() {
 
     
     container.appendChild(input);
-    ProjectFormButton(input) 
+    ProjectSubmit(input) 
    
 
 }

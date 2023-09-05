@@ -1,4 +1,4 @@
-import { projectArray } from "../view";
+import { projectManager } from "../view";
 import { getProjectId } from "./get-set-project-id";
 
 export default function ProjectDelete() {
@@ -14,7 +14,7 @@ export default function ProjectDelete() {
     projectDel.addEventListener('click', (e) => {
 
         if(getProjectId() === 0) return;  
-        projectArray.removeProject(getProjectId())        
+        projectManager.removeProject(getProjectId())        
         project.childNodes[getProjectId()].remove()
         
         

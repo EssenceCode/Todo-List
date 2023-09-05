@@ -1,5 +1,5 @@
 import Todo from "../todo"
-import { projectArray } from "../view";
+import { projectManager } from "../view";
 import { getProjectId } from "./get-set-project-id";
 import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
@@ -18,13 +18,12 @@ export default function TodoSubmit() {
         date.value, 
         priority.value, 
         );
-        projectArray.Projects[getProjectId()].addTodo(todo)
+        projectManager.Projects[getProjectId()].addTodo(todo)
+        
         TodoRender() 
         EditTodo()
         DelTodo()
-     
         
-
-     
+      
        
 }
