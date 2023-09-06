@@ -34,6 +34,7 @@ const defaultProject = Project('default')
 
 projectManager.addProject(defaultProject)
 
+// console.log(projectManager.Projects)
 
 
 

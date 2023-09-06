@@ -21,8 +21,8 @@ export default function CreateProjects(title, id =  crypto.randomUUID()) {
 }
 
 export function ProjectArrayCreate(title) {
+   
     const projectArray = []
-  
     const Projects = projectArray
 
     return Object.assign(
