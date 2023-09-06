@@ -1,7 +1,8 @@
 import View, {projectManager}from './view.js'; 
-
+import storeProject from './storage-project.js';
 import './style.css'
 
+// storeProject()
 
 View().ProjectForm()
 View().ProjectRender()
@@ -13,10 +14,11 @@ View().TodoFormButton()
 
 
 window.addEventListener('load', (e) => {
-    if(localStorage.getItem("ProjectArray")) {
+    if(localStorage.getItem("ProjectArray") !== null) {
  
-    projectManager.Projects = JSON.parse(localStorage.getItem("ProjectArray"))
+    projectManager.addLocalStorage(JSON.parse(localStorage.getItem("ProjectArray")))
     console.log(projectManager)
-    console.log('hello')
+    // console.log(projectManager.hasOwnProperty('addProject'))
     }
  })
+
