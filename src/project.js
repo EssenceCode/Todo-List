@@ -25,11 +25,14 @@ export function ProjectArrayCreate(title) {
     const projectArray = []
     const Projects = projectArray
 
+    const addProject = (arr) => projectArray.push(arr)
+
     return Object.assign(
         {},
         {title},
         { Projects },
-        PushProject(projectArray),
+        { addProject },
+        // PushProject(projectArray),
         DeleteProject(projectArray)
     )
     

@@ -13,9 +13,9 @@ View().TodoFormButton()
 
 
 window.addEventListener('load', (e) => {
-    if(localStorage.getItem("ProjectManager")) {
+    if(localStorage.getItem("ProjectArray")) {
  
-    projectManager.Projects = JSON.parse(localStorage.getItem("ProjectManager"))
+    projectManager.Projects = JSON.parse(localStorage.getItem("ProjectArray"))
     console.log(projectManager)
     console.log('hello')
     }

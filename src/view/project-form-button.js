@@ -25,8 +25,8 @@ export default function ProjectSubmit(input) {
         ProjectEvent()
         ProjectTitleRender()
         
-        console.log(projectManager.Projects)
-        console.log(projectManager.hasOwnProperty('addProject'))
+        console.log(projectManager)
+        // console.log(projectManager.hasOwnProperty('addProject'))
         input.value = ''
     })
     container.appendChild(button);
