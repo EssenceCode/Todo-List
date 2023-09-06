@@ -1,5 +1,6 @@
 import { projectManager } from "../view";
 import { getProjectId } from "./get-set-project-id";
+import storeProject from "../storage-project";
 
 export default function ProjectDelete() {
     const project = document.querySelector('.project-container');
@@ -16,7 +17,7 @@ export default function ProjectDelete() {
         if(getProjectId() === 0) return;  
         projectManager.removeProject(getProjectId())        
         project.childNodes[getProjectId()].remove()
-        
+        storeProject()
         
         todo.textContent = ''
         title.textContent = ''

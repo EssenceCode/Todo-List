@@ -3,7 +3,7 @@ import { projectManager } from "../view";
 import ProjectRender from "./project-render";
 import ProjectEvent from "./project-event";
 import ProjectTitleRender from "./project-title-render";
-import storeProject, {getStorage} from "../storage.project";
+import storeProject from "../storage-project";
 
 export default function ProjectSubmit(input) {
     const container = document.querySelector('.sidebar');
@@ -20,11 +20,11 @@ export default function ProjectSubmit(input) {
 
         const project = Project(input.value);
         projectManager.addProject(project)
-        
         storeProject()
         ProjectRender()
         ProjectEvent()
-        ProjectTitleRender() 
+        ProjectTitleRender()
+        
         console.log(projectManager.Projects)
         console.log(projectManager.hasOwnProperty('addProject'))
         input.value = ''
