@@ -1,5 +1,5 @@
 import View, {projectManager}from './view.js'; 
-import storeProject from './storage-project.js';
+
 import './style.css'
 
 // storeProject()
@@ -18,7 +18,7 @@ window.addEventListener('load', (e) => {
  
     projectManager.addLocalStorage(JSON.parse(localStorage.getItem("ProjectArray")))
     console.log(projectManager)
-    // console.log(projectManager.hasOwnProperty('addProject'))
+  
     }
  })
 

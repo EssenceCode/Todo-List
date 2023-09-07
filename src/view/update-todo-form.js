@@ -6,11 +6,6 @@ export default function UpdateTodo() {
     const form = document.createElement('form')
     form.classList.add('todo-update-form')
 
-    // const inputTitle = document.createElement('input');
-    // const inputDescription= document.createElement('input');
-    // const inputDate = document.createElement('input');
-    // const inputPriority = document.createElement('select');
-
     const inputArray = [
         {
             label: 'TitleUpdate',
@@ -77,16 +72,6 @@ export default function UpdateTodo() {
         formContainer.classList.toggle('show-form')
     })
 
-
-    // inputTitle.setAttribute('type', 'text')
-    // inputDescription.setAttribute('type', 'text')
-    // inputDate.setAttribute('type', 'date')
-    // inputPriority.setAttribute('type', 'text')
-    
-  
-    // inputTitle.setAttribute("placeholder", 'title')
-    // inputDescription.setAttribute("placeholder", 'description')  
-    // inputPriority.setAttribute("placeholder", 'priority')  
     
     const inputPriority = document.createElement('select');
     const labelPriority = document.createElement('label')
@@ -108,15 +93,7 @@ export default function UpdateTodo() {
             text: 'high',
         },
     ];
-    // loop the choose to put in the select element
-    // for(let i = 0; i < priorityArr.length; i++) {
-    //     const option = document.createElement("option");
-    //     option.value = priorityArr[i].value;
-    //     option.text = priorityArr[i].text;
 
-        
-    //     inputPriority.appendChild(option);
-    // }
 
     for(let i = 0; i < priorityArr.length; i++) {
         const option = document.createElement("option");

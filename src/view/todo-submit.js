@@ -1,6 +1,7 @@
 import Todo from "../todo"
 import { projectManager } from "../view";
 import { getProjectId } from "./get-set-project-id";
+import storeProject from "../storage-project";
 import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
 import DelTodo from "./todo-delete";
@@ -19,7 +20,8 @@ export default function TodoSubmit() {
         priority.value, 
         );
         projectManager.Projects[getProjectId()].addTodo(todo)
-        
+        storeProject()
+        console.log(projectManager.Projects[getProjectId()].todoList)
         TodoRender() 
         EditTodo()
         DelTodo()

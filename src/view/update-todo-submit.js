@@ -5,6 +5,9 @@ import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
 import DelTodo from "./todo-delete";
 
+
+
+
 export default function TodoUpdateSubmit() {
     const inputTitle = document.getElementById('TitleUpdate')
     const inputDescription = document.getElementById('DescriptionUpdate')
@@ -16,11 +19,13 @@ export default function TodoUpdateSubmit() {
     projectManager.Projects[getProjectId()].todoList[getTodoId()].DueDate = inputDate.value,              
     projectManager.Projects[getProjectId()].todoList[getTodoId()].Priority = inputPriority.value,               
                    
-    console.log(projectManager.Projects[getProjectId()].todoList)
+    projectManager.Projects[getProjectId()].todoList
+    
+
     TodoRender() 
- 
     EditTodo()
     DelTodo()
+    console.log('hello')
     
       
        

@@ -5,6 +5,7 @@ import TodoFormButton from "./todo-form-button"
 import TodoRender from "./todo-render"
 import EditTodo from "./todo-edit"
 import DelTodo from "./todo-delete"
+import { projectManager } from "../view"
 
 
 
@@ -20,7 +21,10 @@ export default function ProjectEvent() {
         buttonContainer.textContent = ''
         setProjectId(nodeId)
        
-        console.log(project)
+        
+        console.log(Number(nodeId) === getProjectId())
+        console.log(projectManager.Projects[getProjectId()].todoList)
+       
         ProjectTitleRender()
         TodoFormButton()
         TodoRender()

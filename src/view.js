@@ -31,8 +31,10 @@ export const projectManager = ProjectArrayCreate('ProjectManager');
 
 const defaultProject = Project('default')
 
+if(!localStorage.getItem("ProjectArray")) {
 
-projectManager.addProject(defaultProject)
+    projectManager.addProject(defaultProject)
+}
 
 // console.log(projectManager.Projects)
 

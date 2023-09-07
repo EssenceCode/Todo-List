@@ -7,6 +7,7 @@ import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
 
 
+
 export default function DelTodo() {
     const button = document.querySelectorAll('.del-todo');
     
@@ -16,7 +17,7 @@ export default function DelTodo() {
         setTodoId(id)
         projectManager.Projects[getProjectId()].removeTodo(getTodoId())
         parent.remove()
-        
+       
         console.log(getTodoId())
         console.log(id)
         

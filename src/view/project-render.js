@@ -1,5 +1,6 @@
 import { setProjectId } from "./get-set-project-id";
 import { projectManager } from "../view";
+import storeProject from "../storage-project";
 
 export default function ProjectRender() {
     const content = document.querySelector('.project-container')
@@ -16,7 +17,7 @@ export default function ProjectRender() {
         project.classList.add('project');
         
         project.textContent = projectManager.Projects[i].Title;
-    
+        
        
         content.appendChild(project)    
         
