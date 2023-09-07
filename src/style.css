@@ -115,9 +115,9 @@ button { --project-add-width: 100px;
     gap: 5px;
 }
 
-.form {
+/* .form {
     display: none;
-}
+} */
 
 .show-form {
     display: grid;

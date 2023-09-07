@@ -4,7 +4,7 @@ import { getTodoId } from "./get-set-todo-id";
 import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
 import DelTodo from "./todo-delete";
-
+import storeProject from "../storage-project";
 
 
 
@@ -21,7 +21,7 @@ export default function TodoUpdateSubmit() {
                    
     projectManager.Projects[getProjectId()].todoList
     
-
+    storeProject()
     TodoRender() 
     EditTodo()
     DelTodo()

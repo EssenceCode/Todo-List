@@ -6,33 +6,30 @@ import DeleteTodo from "./project/del-todo";
 export default function CreateProjects(title) { 
     const todoArray = [];
     const Title = title 
-
  
     const todoList = todoArray  
    
     return Object.assign(
         {},
-       
         { Title },
         { todoList },
-        PushTodo(todoArray),
+        PushTodo(todoList),
         DeleteTodo(todoList),
       
         )
 }
 
 export function ProjectArrayCreate(title) {
-   
     const projectArray = []
     const Projects = projectArray
 
     const addLocalStorage = (arr) => {
-        // projectArray.push(arr)
-        // console.log(arr)
-        // console.log(projectArray)
-        // console.log(Projects)
-        // console.log(projectManager)
-        arr.forEach(val => projectArray.push(Object.assign({}, val)));
+        arr.forEach(val => projectArray.push(Object.assign(
+            {},
+            val,
+            PushTodo(val.todoList), 
+            DeleteTodo(val.todoList),
+            )));
     }
 
     return Object.assign(
@@ -41,10 +38,9 @@ export function ProjectArrayCreate(title) {
         { Projects },
         { addLocalStorage },
         PushProject(projectArray),
-        DeleteProject(projectArray)
+        DeleteProject(projectArray),
     )
     
 }
-
 
 

@@ -6,6 +6,7 @@ import { getTodoId } from "./get-set-todo-id";
 import TodoRender from "./todo-render";
 import EditTodo from "./todo-edit";
 
+import storeProject from "../storage-project";
 
 
 export default function DelTodo() {
@@ -17,16 +18,12 @@ export default function DelTodo() {
         setTodoId(id)
         projectManager.Projects[getProjectId()].removeTodo(getTodoId())
         parent.remove()
-       
-        console.log(getTodoId())
-        console.log(id)
-        
         console.log(projectManager.Projects[getProjectId()].todoList)
-        
+        storeProject()
         TodoRender() 
         EditTodo()
         DelTodo()
-
+    
     }))
 
 }

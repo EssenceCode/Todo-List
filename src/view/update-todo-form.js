@@ -1,4 +1,5 @@
 import TodoUpdateSubmit from "./update-todo-submit";
+import storeProject from "../storage-project";
 
 export default function UpdateTodo() {
         
@@ -68,7 +69,9 @@ export default function UpdateTodo() {
 
     button.addEventListener('click', (e) => {
         e.preventDefault()
+        
         TodoUpdateSubmit()
+        
         formContainer.classList.toggle('show-form')
     })
 
@@ -104,14 +107,16 @@ export default function UpdateTodo() {
         inputPriority.appendChild(option);
     }
 
-
-
+    
     form.appendChild(labelPriority)
     form.appendChild(inputPriority)
 
     form.appendChild(button)
 
     formContainer.appendChild(form)
+   
+    console.log('hello')
+
         
 
 

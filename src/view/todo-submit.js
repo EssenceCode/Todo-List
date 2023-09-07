@@ -20,8 +20,9 @@ export default function TodoSubmit() {
         priority.value, 
         );
         projectManager.Projects[getProjectId()].addTodo(todo)
+        console.log(todo)
         storeProject()
-        console.log(projectManager.Projects[getProjectId()].todoList)
+        // console.log(projectManager.Projects[getProjectId()].todoList)
         TodoRender() 
         EditTodo()
         DelTodo()
