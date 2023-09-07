@@ -18,9 +18,7 @@ export default function ProjectDelete() {
         projectManager.removeProject(getProjectId())        
         project.childNodes[getProjectId()].remove()
         storeProject()
-        console.log(projectManager)
-        console.log(getProjectId())
-        
+      
         todo.textContent = ''
         title.textContent = ''
         button.textContent = ''

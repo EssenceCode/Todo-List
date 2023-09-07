@@ -36,7 +36,7 @@ export default function ProjectRender() {
        
         content.appendChild(project)    
         
-        console.log(userData)
+        // console.log(userData)
     }
 }
     

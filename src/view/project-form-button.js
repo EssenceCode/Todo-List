@@ -20,7 +20,9 @@ export default function ProjectSubmit(input) {
 
         const project = Project(input.value);
         projectManager.addProject(project)
+        // console.log(typeof projectManager.addProject === 'function')
         storeProject()
+      
         ProjectRender()
         ProjectEvent()
         ProjectTitleRender()

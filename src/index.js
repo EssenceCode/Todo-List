@@ -1,5 +1,5 @@
 import View, {projectManager}from './view.js'; 
-
+import { Replacer } from './storage-project.js';
 import './style.css'
 
 // storeProject()
@@ -17,7 +17,8 @@ window.addEventListener('load', (e) => {
     if(localStorage.getItem("ProjectArray") !== null) {
  
     projectManager.addLocalStorage(JSON.parse(localStorage.getItem("ProjectArray")))
-    console.log(projectManager)
+    console.log(Replacer())
+    // console.log(projectManager)
   
     }
  })
