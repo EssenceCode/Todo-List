@@ -35,7 +35,9 @@ button { --project-add-width: 100px;
 
 .header-container {
    padding: 25px;
-    background: green;
+   background: green;
+   text-align: center;
+   color: white;
     /* margin-bottom: 25px; */
 
 }
