@@ -114,13 +114,4 @@ export default function UpdateTodoForm() {
     form.appendChild(button)
 
     formContainer.appendChild(form)
-   
-    console.log('hello')
-
-        
-
-
-        
-   
-
 }

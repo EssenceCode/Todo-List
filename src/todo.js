@@ -10,10 +10,7 @@ export default function CreateTodo(title, description, dueDate, priority) {
         Title,
         Description,
         DueDate,
-        Priority,
-      
-     
-        
+        Priority,  
     }
 }
 

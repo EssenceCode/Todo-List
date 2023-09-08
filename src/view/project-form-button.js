@@ -20,15 +20,14 @@ export default function ProjectSubmit(input) {
 
         const project = Project(input.value);
         projectManager.addProject(project)
-        // console.log(typeof projectManager.addProject === 'function')
+    
         storeProject()
       
         ProjectRender()
         ProjectEvent()
         ProjectTitleRender()
         
-        // console.log(projectManager)
-        // console.log(projectManager.hasOwnProperty('addProject'))
+    
         input.value = ''
     })
     container.appendChild(button);

@@ -12,10 +12,9 @@ export default function EditTodo() {
         const parent = e.target.parentElement
         const id = parent.getAttribute('todo')
         setTodoId(id)
-       
-        //
-        console.log(id)
+  
         console.log('hello')
+        
         UpdateTodoForm()
         form.classList.toggle('show-form')
      

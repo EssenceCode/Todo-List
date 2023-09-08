@@ -37,7 +37,6 @@ if(!localStorage.getItem("ProjectArray")) {
     
 }
 
-// console.log(projectManager.Projects)
 
 
 
