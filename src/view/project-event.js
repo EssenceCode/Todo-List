@@ -3,8 +3,7 @@ import { getProjectId } from "./get-set-project-id"
 import ProjectTitleRender from "./project-title-render"
 import TodoFormButton from "./todo-form-button"
 import TodoRender from "./todo-render"
-import EditTodo from "./todo-edit"
-import DelTodo from "./todo-delete"
+
 import { projectManager } from "../view"
 
 
@@ -30,8 +29,7 @@ export default function ProjectEvent() {
         TodoRender()
         
         
-        EditTodo()
-        DelTodo()
+     
 
       console.log(projectManager.Projects[getProjectId()].todoList)
        
