@@ -1,5 +1,5 @@
 import { setTodoId } from "./get-set-todo-id";
-import UpdateTodo from "./update-todo-form";
+import UpdateTodoForm from "./update-todo-form";
 import storeProject from "../storage-project";
 
 
@@ -14,7 +14,9 @@ export default function EditTodo() {
         setTodoId(id)
        
         //
-        UpdateTodo()
+        console.log(id)
+        console.log('hello')
+        UpdateTodoForm()
         form.classList.toggle('show-form')
      
 

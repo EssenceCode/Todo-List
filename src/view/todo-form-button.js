@@ -6,7 +6,7 @@ export default function TodoFormButton() {
     const button = document.createElement('button');
     const span = document.createElement('span');
     button.classList.add('add-todo');
-    // button.textContent = 'Add Todo'
+    
     
     button.appendChild(span)
     button.addEventListener('click', (e) => {

@@ -14,12 +14,12 @@ export default function TodoUpdateSubmit() {
     const inputDate = document.getElementById('DateUpdate')
     const inputPriority = document.getElementById('PriorityUpdate')
    
-    projectManager.Projects[getProjectId()].todoList[getTodoId()].Title = inputTitle.value, 
-    projectManager.Projects[getProjectId()].todoList[getTodoId()].Description = inputDescription.value,              
-    projectManager.Projects[getProjectId()].todoList[getTodoId()].DueDate = inputDate.value,              
-    projectManager.Projects[getProjectId()].todoList[getTodoId()].Priority = inputPriority.value,               
-                   
-    projectManager.Projects[getProjectId()].todoList
+    // projectManager.Projects[getProjectId()].todoList[getTodoId()].Title = inputTitle.value, 
+    // projectManager.Projects[getProjectId()].todoList[getTodoId()].Description = inputDescription.value,              
+    // projectManager.Projects[getProjectId()].todoList[getTodoId()].DueDate = inputDate.value,              
+    // projectManager.Projects[getProjectId()].todoList[getTodoId()].Priority = inputPriority.value,               
+    // projectManager.Projects[getProjectId()].todoList[getTodoId()].upda   
+    projectManager.Projects[getProjectId()].updateTodo(getTodoId(),inputTitle.value, inputDescription.value, inputDate.value, inputPriority.value)
     
     storeProject()
     TodoRender() 

@@ -34,6 +34,7 @@ const defaultProject = Project('default')
 if(!localStorage.getItem("ProjectArray")) {
 
     projectManager.addProject(defaultProject)
+    
 }
 
 // console.log(projectManager.Projects)

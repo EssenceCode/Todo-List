@@ -6,7 +6,8 @@ import TodoRender from "./todo-render"
 import EditTodo from "./todo-edit"
 import DelTodo from "./todo-delete"
 import { projectManager } from "../view"
-import UpdateTodo from "./update-todo-form"
+
+
 
 
 
@@ -32,7 +33,7 @@ export default function ProjectEvent() {
         EditTodo()
         DelTodo()
 
-      console.log(projectManager.Projects)
+      console.log(projectManager.Projects[getProjectId()].todoList)
        
         
     }))

@@ -1,7 +1,7 @@
 import TodoUpdateSubmit from "./update-todo-submit";
 import storeProject from "../storage-project";
 
-export default function UpdateTodo() {
+export default function UpdateTodoForm() {
         
     const formContainer = document.querySelector('.form-update');
     const form = document.createElement('form')
