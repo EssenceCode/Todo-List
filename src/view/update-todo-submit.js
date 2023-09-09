@@ -17,8 +17,4 @@ export default function TodoUpdateSubmit() {
     
     storeProject()
     TodoRender() 
-
-    
-      
-       
 }

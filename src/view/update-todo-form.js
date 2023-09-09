@@ -12,16 +12,19 @@ export default function UpdateTodoForm() {
             label: 'TitleUpdate',
             placeholder: 'title',
             type: 'text',
+            title: 'Title'
         },
         {
             label: 'DescriptionUpdate',
             placeholder: 'description',
             type: 'text',
+            title: 'Description'
         },
         {
             label: 'DateUpdate',
             placeholder: '',
             type: 'date',
+            title: 'Date'
         },
     ]
 
@@ -35,9 +38,9 @@ export default function UpdateTodoForm() {
         label.setAttribute('for', inputArray[i].label)
        
 
-        label.textContent = inputArray[i].label
-        label.textContent = inputArray[i].label
-        label.textContent = inputArray[i].label
+        label.textContent = inputArray[i].title
+        label.textContent = inputArray[i].title
+        label.textContent = inputArray[i].title
        
 
 

@@ -1,13 +1,16 @@
 :root {
+    --background-color: aliceblue;
+    --font-color:cornflowerblue;;
     --project-width: 120px;
     --project-height: 50px;
     --project-border-width: 2px;
-    --button-hover-border-color: rgb(0, 128, 0);
-    --button-hover-background-color: rgb(0, 128, 0);
+    --button-hover-border-color: rgb(100, 149, 237);
+    --button-hover-background-color: rgb(100, 149, 237);
     --button-hover-color: rgb(255,255,255);
+    --button-border-color: solid rgb(100, 149, 237);
 
    
-
+    --todo-elements-color:rgb(70, 130, 180);
     --todo-buttons-width: 50px;
     --todo-buttons-height: 25px;
 }
@@ -28,34 +31,32 @@ button { --project-add-width: 100px;
 
 
 .content {
-  
     display: grid;
     grid-template-columns: 1fr 2fr;
+    gap: 10px;
 }
 
 .header-container {
    padding: 25px;
-   background: green;
+   background: var(--background-color);
    text-align: center;
-   color: white;
-    /* margin-bottom: 25px; */
+   color: var(--font-color);
+   
 
 }
 
 .project-wrapper {
     height: 100vh;
-    background-color: aliceblue;
+    background-color: var(--background-color);
     display: grid;
-    /* grid-template-columns: 1fr; */
     grid-column: 1;
     grid-row: 1 / 4;
     place-items: center;
-    /* gap: 20px; */
+   
 }
 
 .project-container {
     display: grid;
-    /* grid-template-rows: repeat(auto-fit,minmax(25px, 1fr)); */
     gap: 10px;
 }
 
@@ -72,9 +73,9 @@ button { --project-add-width: 100px;
     width: var(--project-width);
     height: var(--project-height);
     border-radius: 5px;
-    border: 2px solid blue;
+    border: 2px var(--button-border-color);
     background: white;
-    color: black;  
+    color: var(--font-color); 
 
 }
 
@@ -87,9 +88,9 @@ button { --project-add-width: 100px;
 
 .project-add, .project-delete {
     border-radius: 5px;
-    border: 2px solid blue;
+    border: 2px var(--button-border-color);
     background: white;
-    color: black;
+    color: var(--font-color);
 }
 
 .project-add:active, .project-delete:active {
@@ -99,6 +100,14 @@ button { --project-add-width: 100px;
     color: var(--button-hover-color);
 }
 
+.project-title {
+    font-size: 2rem;
+    color: steelblue;
+}
+
+.add-todo-button {
+    margin-top: 25px;
+}
 
 .form {
     
@@ -113,13 +122,9 @@ button { --project-add-width: 100px;
     grid-column: 2;
 
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); */
-    gap: 5px;
+    
+    gap: 10px;
 }
-
-/* .form {
-    display: none;
-} */
 
 .show-form {
     display: grid;
@@ -130,16 +135,18 @@ button { --project-add-width: 100px;
 .todo-form, .todo-update-form {
     display: grid;
     place-content: center;
-    background: aliceblue;
+    background: var(--background-color);
     height: 200px;
     width: 250px;
     gap: 2px;
+    margin-top: 25px;
 }
 
 .todo-card {
-    background-color: aliceblue;
+    background-color: var(--background-color);
     display: flex;
     justify-content: space-around;
+    color: var(--todo-elements-color);
 }
 .todo-buttons {
     display: flex;
@@ -154,8 +161,9 @@ button { --project-add-width: 100px;
     width: var(--todo-buttons-width);
     height: var(--todo-buttons-height);
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px var(--button-border-color);
     background: white;
+    color: var(--font-color);;
 }
 
 .edit-todo:active, .del-todo:active, .update-todo:active {
@@ -167,10 +175,13 @@ button { --project-add-width: 100px;
 
 .add-todo {
    
-    width: 150px;
+    width: 80px;
     height: 25px;
     border-radius: 25px;
     border: 0;
+    border: 1px var(--button-border-color);
+    background: white;
+    color: var(--font-color);;
 }
 
 .add-todo:active {
@@ -211,7 +222,7 @@ button { --project-add-width: 100px;
     width: var(--todo-buttons-width);
     height: var(--todo-buttons-height);
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px var(--button-border-color);
     background: white;
 
     justify-self: center;
@@ -223,3 +234,25 @@ button { --project-add-width: 100px;
     background: var(--button-hover-background-color);
     color: var(--button-hover-color);
 }
+
+footer {
+    margin-top: auto;
+    background: var(--background-color);
+    color: var(--font-color);
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color:var(--font-color);
+  }
+
+a:visited {
+    text-decoration: none;
+    color:plum;
+}  
