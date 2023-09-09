@@ -1,10 +1,9 @@
 import { setProjectId } from "./get-set-project-id"
-import { getProjectId } from "./get-set-project-id"
 import ProjectTitleRender from "./project-title-render"
 import TodoFormButton from "./todo-form-button"
 import TodoRender from "./todo-render"
 
-import { projectManager } from "../view"
+
 
 
 
@@ -31,7 +30,7 @@ export default function ProjectEvent() {
         
      
 
-      console.log(projectManager.Projects[getProjectId()].todoList)
+     
        
         
     }))

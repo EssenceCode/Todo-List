@@ -19,7 +19,7 @@ window.addEventListener('load', (e) => {
     projectManager.addLocalStorage(JSON.parse(localStorage.getItem("ProjectArray")))
     
    
-    console.log(projectManager.Projects)
+    
   
     }
  })

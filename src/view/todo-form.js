@@ -120,6 +120,5 @@ export default function TodoForm() {
 
     formContainer.appendChild(form)
         
-   console.log('hello')
-
+  
 }

@@ -7,6 +7,6 @@ export function setProjectId(newVal) {
 }
 
 export function getProjectId() {
-    // console.log(projectID)
+   
     return Number(projectID);
 }

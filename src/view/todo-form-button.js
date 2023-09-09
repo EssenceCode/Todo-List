@@ -1,6 +1,5 @@
 import TodoForm from "./todo-form";
-import DelTodo from "./todo-delete";
-import EditTodo from "./todo-edit";
+
 export default function TodoFormButton() {
     const container = document.querySelector('.add-todo-button');
     const form = document.querySelector('.form');

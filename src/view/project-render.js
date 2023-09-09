@@ -1,6 +1,6 @@
 import { setProjectId } from "./get-set-project-id";
 import { projectManager } from "../view";
-import storeProject from "../storage-project";
+
 
 export default function ProjectRender() {
     const content = document.querySelector('.project-container')
@@ -21,7 +21,7 @@ export default function ProjectRender() {
        
         content.appendChild(project)    
         
-        console.log(userData)
+      
     }
 } else {
     for (let i = 0; i < userData.length; i++) {
@@ -36,7 +36,7 @@ export default function ProjectRender() {
        
         content.appendChild(project)    
         
-        // console.log(userData)
+      
     }
 }
     
