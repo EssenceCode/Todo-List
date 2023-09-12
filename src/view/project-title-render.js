@@ -15,6 +15,7 @@ export default function ProjectTitleRender() {
     const title = document.createElement("h2")
     title.textContent = userData[getProjectId()].Title
     content.appendChild(title)
+    console.log(getProjectId())
    }
 
 }

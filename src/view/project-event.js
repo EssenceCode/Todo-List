@@ -1,4 +1,4 @@
-import { setProjectId } from "./get-set-project-id"
+import { setProjectId , getProjectId } from "./get-set-project-id"
 import ProjectTitleRender from "./project-title-render"
 import TodoFormButton from "./todo-form-button"
 import TodoRender from "./todo-render"
@@ -17,7 +17,8 @@ export default function ProjectEvent() {
         setProjectId(nodeId)
        
        
-    
+        console.log(projects)
+        console.log(getProjectId())
         ProjectTitleRender()
         TodoFormButton()
         TodoRender()

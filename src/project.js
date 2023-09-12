@@ -10,7 +10,7 @@ export default function CreateProjects(title) {
 
   const todoList = todoArray;
 
-  console.log("hello");
+  
 
   return {
     Title,
