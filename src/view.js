@@ -5,8 +5,6 @@ import ProjectTitleRender from "./view/project-title-render";
 import ProjectDelete from "./view/project-delete";
 import TodoRender from "./view/todo-render";
 import TodoFormButton from "./view/todo-form-button";
-import EditTodo from "./view/todo-edit";
-import DelTodo from "./view/todo-delete";
 
 export default function View() {
 
@@ -18,8 +16,6 @@ export default function View() {
         ProjectDelete,
         TodoRender,
         TodoFormButton,
-        EditTodo,
-        DelTodo,
     }
 }
 

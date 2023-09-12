@@ -11,8 +11,7 @@ View().ProjectTitleRender();
 View().ProjectDelete();
 View().TodoRender();
 View().TodoFormButton();
-View().EditTodo();
-View().DelTodo();
+
 
 window.addEventListener("load", () => {
   if (localStorage.getItem("ProjectArray") !== null) {
