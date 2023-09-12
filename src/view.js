@@ -1,14 +1,13 @@
-import Project, {ProjectArrayCreate} from './project.js';
-import ProjectForm from './view/project-form.js';
-import ProjectRender from './view/project-render.js';
-import ProjectEvent from './view/project-event.js';
-import ProjectTitleRender from './view/project-title-render.js';
-import ProjectDelete from './view/project-delete.js';
-import TodoForm from './view/todo-form.js';
-import TodoRender from './view/todo-render.js';
-import EditTodo from './view/todo-edit.js';
-import DelTodo from './view/todo-delete.js';
-import TodoFormButton from './view/todo-form-button.js';
+import ProjectForm from "./view/project-form";
+import ProjectRender from "./view/project-render";
+import ProjectEvent from "./view/project-event";
+import ProjectTitleRender from "./view/project-title-render";
+import ProjectDelete from "./view/project-delete";
+import TodoRender from "./view/todo-render";
+import TodoFormButton from "./view/todo-form-button";
+import EditTodo from "./view/todo-edit";
+import DelTodo from "./view/todo-delete";
+
 export default function View() {
 
     return {
@@ -17,24 +16,11 @@ export default function View() {
         ProjectEvent,
         ProjectTitleRender,        
         ProjectDelete,
-        TodoForm,
         TodoRender,
+        TodoFormButton,
         EditTodo,
         DelTodo,
-        TodoFormButton,
     }
-}
-
-export const projectManager = ProjectArrayCreate('ProjectManager');
-
-
-
-const defaultProject = Project('default')
-
-if(!localStorage.getItem("ProjectArray")) {
-
-    projectManager.addProject(defaultProject)
-    
 }
 
 

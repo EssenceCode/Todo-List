@@ -1,4 +1,4 @@
-import { projectManager } from "./view";
+import { projectManager } from "./project";
 
 export default function storeProject() {
 

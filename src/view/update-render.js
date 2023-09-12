@@ -2,11 +2,12 @@
 import { projectManager } from "../project";
 import { getProjectId } from "./get-set-project-id";
 import { setTodoId } from "./get-set-todo-id";
+import EditTodo from "./todo-edit";
+import DelTodo from "./todo-delete";
 
 export default function TodoRender() {
     const container = document.querySelector(".todo-container")
     const userData = JSON.parse(localStorage.getItem("ProjectArray"))
-
    
     container.textContent = ""
     if(!localStorage.getItem("ProjectArray")) {
@@ -46,7 +47,9 @@ export default function TodoRender() {
             const editBtn = document.createElement("button");
             editBtn.classList.add("edit-todo");
             editBtn.textContent = "Edit";
-       
+            editBtn.addEventListener("click", () => {
+                
+            })
     
             const delBtn = document.createElement("button");
             delBtn.classList.add("del-todo");
@@ -109,8 +112,6 @@ export default function TodoRender() {
             const editBtn = document.createElement("button");
             editBtn.classList.add("edit-todo");
             editBtn.textContent = "Edit";
-            
-    
     
             const delBtn = document.createElement("button");
             delBtn.classList.add("del-todo");
@@ -137,6 +138,7 @@ export default function TodoRender() {
         }
 
     }
- 
+    EditTodo()
+    DelTodo()
 
 }

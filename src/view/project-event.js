@@ -4,21 +4,16 @@ import TodoFormButton from "./todo-form-button"
 import TodoRender from "./todo-render"
 
 
-
-
-
-
-
 export default function ProjectEvent() {
-    const project = document.querySelectorAll('.project')
-    const buttonContainer = document.querySelector('.add-todo-button')
+    const project = document.querySelectorAll(".project")
+    const buttonContainer = document.querySelector(".add-todo-button")
     
-    const title = document.querySelector('.project-title')
-    project.forEach(val => val.addEventListener('click', (e) => {
-        let project = e.target
-        let nodeId = project.getAttribute('project')
-        title.textContent = ''
-        buttonContainer.textContent = ''
+    const title = document.querySelector(".project-title")
+    project.forEach(val => val.addEventListener("click", (e) => {
+        const projects = e.target
+        const nodeId = projects.getAttribute("project")
+        title.textContent = ""
+        buttonContainer.textContent = ""
         setProjectId(nodeId)
        
        

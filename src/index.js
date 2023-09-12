@@ -1,26 +1,23 @@
-import View, {projectManager}from './view.js'; 
-
-import './style.css'
+import View from "./view";
+import { projectManager } from "./project";
+import "./style.css";
 
 // storeProject()
 
-View().ProjectForm()
-View().ProjectRender()
-View().ProjectEvent()
-View().ProjectTitleRender()
-View().ProjectDelete()
-View().TodoRender()
-View().TodoFormButton()
+View().ProjectForm();
+View().ProjectRender();
+View().ProjectEvent();
+View().ProjectTitleRender();
+View().ProjectDelete();
+View().TodoRender();
+View().TodoFormButton();
+View().EditTodo();
+View().DelTodo();
 
-
-window.addEventListener('load', (e) => {
-    if(localStorage.getItem("ProjectArray") !== null) {
- 
-    projectManager.addLocalStorage(JSON.parse(localStorage.getItem("ProjectArray")))
-    
-   
-    
-  
-    }
- })
-
+window.addEventListener("load", () => {
+  if (localStorage.getItem("ProjectArray") !== null) {
+    projectManager.addLocalStorage(
+      JSON.parse(localStorage.getItem("ProjectArray")),
+    );
+  }
+});

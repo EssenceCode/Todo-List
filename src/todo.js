@@ -1,8 +1,8 @@
 export default function CreateTodo(title, description, dueDate, priority) {
-    let Title = title;
-    let Description = description;
-    let DueDate = dueDate;
-    let Priority = priority;
+    const Title = title;
+    const Description = description;
+    const DueDate = dueDate;
+    const Priority = priority;
    
 
 
