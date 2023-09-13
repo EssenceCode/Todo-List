@@ -2,10 +2,9 @@
 import { projectManager } from "../project";
 import { getProjectId } from "./get-set-project-id";
 import { setTodoId } from "./get-set-todo-id";
-import EditTodo from "./todo-edit";
-import DelTodo from "./todo-delete";
 
-export default function TodoRender() {
+
+export default function UpdateTodoRender() {
     const container = document.querySelector(".todo-container")
     const userData = JSON.parse(localStorage.getItem("ProjectArray"))
    
@@ -138,7 +137,6 @@ export default function TodoRender() {
         }
 
     }
-    EditTodo()
-    DelTodo()
+
 
 }

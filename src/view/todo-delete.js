@@ -3,7 +3,9 @@ import { projectManager } from "../project";
 import { getProjectId } from "./get-set-project-id"
 import storeProject from "../storage-project";
 
-import TodoRender from "./todo-render";
+
+
+
 
 export default function DelTodo() {
     const button = document.querySelectorAll(".del-todo");
@@ -16,7 +18,8 @@ export default function DelTodo() {
         parent.remove()
       
         storeProject()
-        TodoRender() 
+       
+       
       
     
     }))

@@ -1,6 +1,7 @@
 
 import TodoUpdateSubmit from "./update-todo-submit";
-
+import EditTodo from "./todo-edit";
+import DelTodo from "./todo-delete";
 
 export default function UpdateTodoForm() {
         
@@ -76,6 +77,8 @@ export default function UpdateTodoForm() {
         e.preventDefault()
         
         TodoUpdateSubmit()
+        EditTodo()
+        DelTodo()
         
         formContainer.classList.toggle("show-form")
     })
@@ -119,5 +122,5 @@ export default function UpdateTodoForm() {
 
     form.appendChild(button)
 
-    formContainer.appendChild(form)
+    return formContainer.appendChild(form)
 }

@@ -1,8 +1,8 @@
 import { projectManager } from "../project";
 import { getProjectId } from "./get-set-project-id";
 import { getTodoId } from "./get-set-todo-id";
-import TodoRender from "./todo-render";
 
+import UpdateTodoRender from "./update-render";
 import storeProject from "../storage-project";
 
 
@@ -16,5 +16,6 @@ export default function TodoUpdateSubmit() {
     projectManager.Projects[getProjectId()].updateTodo(getTodoId(),inputTitle.value, inputDescription.value, inputDate.value, inputPriority.value)
     
     storeProject()
-    TodoRender() 
+    UpdateTodoRender()
+   
 }
