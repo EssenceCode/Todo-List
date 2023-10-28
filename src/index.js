@@ -9,6 +9,7 @@ View().ProjectRender();
 View().ProjectEvent();
 View().ProjectTitleRender();
 View().ProjectDelete();
+View().UpdateTodoForm()
 View().TodoRender();
 View().TodoFormButton();
 
