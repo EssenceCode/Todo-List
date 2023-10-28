@@ -12,7 +12,7 @@ View().ProjectDelete();
 View().TodoRender();
 View().TodoFormButton();
 
-console.log(View().UpdateTodoForm())
+
 
 
 window.addEventListener("load", () => {
