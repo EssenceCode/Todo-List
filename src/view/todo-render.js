@@ -1,10 +1,10 @@
-/* eslint-disable no-plusplus */
 import { projectManager } from "../project";
-import { getProjectId } from "./get-set-project-id";
-import { setTodoId } from "./get-set-todo-id";
+import { setTodoId , getTodoId } from "./get-set-todo-id";
+import { getProjectId } from "./get-set-project-id"
+import storeProject from "../storage-project";
 
 import EditTodo from "./todo-edit";
-import DelTodo from "./todo-delete";
+
 
 export default function TodoRender() {
     const container = document.querySelector(".todo-container")
@@ -13,7 +13,7 @@ export default function TodoRender() {
    
     container.textContent = ""
     if(!localStorage.getItem("ProjectArray")) {
-        for (let i = 0; i < projectManager.Projects[getProjectId()].todoList.length; i++) {
+        for (let i = 0; i < projectManager.Projects[getProjectId()].todoList.length; i += 1) {
             setTodoId(i)
            
             const todo = document.createElement("div");
@@ -54,6 +54,22 @@ export default function TodoRender() {
             const delBtn = document.createElement("button");
             delBtn.classList.add("del-todo");
             delBtn.textContent = "Del"
+
+
+            delBtn.addEventListener("click", (e) => {
+                const parent = e.target.parentElement;
+                const id = parent.getAttribute("todo");
+                setTodoId(id)
+                
+                projectManager.Projects[getProjectId()].removeTodo(getTodoId())
+                parent.remove()
+              
+                storeProject()
+               
+                TodoRender()
+              
+            
+            })
             
             taskTitle.appendChild(title)
             taskDetails.appendChild(description)
@@ -76,7 +92,7 @@ export default function TodoRender() {
         }
 
     } else {
-        for (let i = 0; i < userData[getProjectId()].todoList.length; i++) {
+        for (let i = 0; i < userData[getProjectId()].todoList.length; i += 1) {
             setTodoId(i)
            
             const todo = document.createElement("div");
@@ -118,6 +134,21 @@ export default function TodoRender() {
             const delBtn = document.createElement("button");
             delBtn.classList.add("del-todo");
             delBtn.textContent = "Del"
+
+            delBtn.addEventListener("click", (e) => {
+                const parent = e.target.parentElement;
+                const id = parent.getAttribute("todo");
+                setTodoId(id)
+              
+                projectManager.Projects[getProjectId()].removeTodo(getTodoId())
+                parent.remove()
+              
+                storeProject()
+               
+                TodoRender()
+              
+            
+            })
             
             taskTitle.appendChild(title)
             taskDetails.appendChild(description)
@@ -142,5 +173,5 @@ export default function TodoRender() {
     }
  
     EditTodo()
-    DelTodo()
+    
 }
